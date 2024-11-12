@@ -16,7 +16,7 @@ struct DetailView: View {
   
   var body: some View {
     List {
-      NavigationLink(destination: destinationView, label: detailView)
+      NavigationLink(destination: { LazyView(destinationView) }, label: detailView)
         .padding(.horizontal, 10)
         .clipShape(.rect(cornerRadius: 16))
         .listRowSeparator(.hidden)

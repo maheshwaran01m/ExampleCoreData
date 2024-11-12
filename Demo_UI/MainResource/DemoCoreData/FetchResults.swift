@@ -13,7 +13,7 @@ class FetchResults<T: NSManagedObject>: NSObject, NSFetchedResultsControllerDele
   
   var onChange: (([T]) -> Void)?
   
-  var objects: [T] = [] {
+  private(set) var objects: [T] = [] {
     didSet {
       onChange?(objects)
     }
